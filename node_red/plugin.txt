@@ -1,0 +1,4 @@
+- node-red-contrib-alexa-cakebaked
+- node-red-contrib-cast
+- node-red-dashboard
+- node-red-node-sqlite
