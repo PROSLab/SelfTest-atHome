@@ -2,7 +2,7 @@
 
 Il sistema è composto da una soluzione node-RED e da una soluzione Alexa.
 
-La cartella CustomInstallNodered-master contiene un installer con il qualel è possibile installare node-red, i plugin necessari e il flow necessario.
+La cartella CustomInstallNodered-master contiene un installer (in fase di miglioramento) con il quale è possibile installare node-red, i plugin necessari e il flow necessario.
 
 La cartella node_red contiene il flow relativo all'intera soluzione e l'elenco dei plugin e componenti utilizzati, che riportiamo anche di seguito:
 - node-red-contrib-alexa-cakebaked
