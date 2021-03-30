@@ -9,6 +9,9 @@ La cartella node_red contiene il flow relativo all'intera soluzione e l'elenco d
 - node-red-contrib-cast
 - node-red-dashboard
 - node-red-node-sqlite
+- node-red-contrib-image-tools
+- node-red-node-ui-table
+- node-red-contrib-ui-media
 
 Per utilizzare il flow è necessario installare node-red, sqlite3 e scaricare ngrok e quindi installare tutti i plugin necessari tramite la voce "manage palette" del menu di node-red.
 

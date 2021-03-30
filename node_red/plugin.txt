@@ -2,3 +2,6 @@
 - node-red-contrib-cast
 - node-red-dashboard
 - node-red-node-sqlite
+- node-red-contrib-image-tools
+- node-red-node-ui-table
+- node-red-contrib-ui-media
