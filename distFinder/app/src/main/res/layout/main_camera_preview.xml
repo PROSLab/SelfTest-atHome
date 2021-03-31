@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CAMERA PREVIEW -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cameraPreview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+
+        <org.opencv.android.JavaCameraView
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/insertIp"
+            android:background="#fff"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="30dp"
+                android:text="Inserisci l' url"
+
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/myIpEditor"
+                android:layout_width="match_parent"
+                android:textColor="#000"
+                android:layout_height="wrap_content"
+                android:background="#dedede"
+                android:text="https://unicam.ngrok.io/"
+                android:inputType="textUri"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/salvaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salva" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/cameraMeasure"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#fff"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/send"
+            android:text="Invia" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/configShow"
+            android:text="URL" />
+
+    </LinearLayout>
+</LinearLayout>

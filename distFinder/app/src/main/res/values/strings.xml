@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Distance Finder</string>
+
+    <string name="guide_step_1_title">Posiziona il piede</string>
+    <string name="guide_step_1_description">Metti un fogli A4 sul pavimento e posiziona il tuo piede all\'interno del foglio. Il tallone deve toccare con il bordo.</string>
+
+    <string name="guide_step_2_title">Inquadra il piede</string>
+    <string name="guide_step_2_description">Inquadra il piede e aspetta che l\'app rilevi il foglio A4. Un bordo verde segnala cosa l\'app sta rilevando</string>
+
+    <string name="guide_step_3_title">Scatta</string>
+    <string name="guide_step_3_description">Scatta la foto e scopri quando misura il tuo piede.</string>
+
+    <string name="guide_done_button">Fatto</string>
+
+    <string name="size_table_title">Guida Alle taglie</string>
+
+    <string name="table_size_head_size">Taglia</string>
+    <string name="table_size_head_cm">Cm.</string>
+
+    <string name="close">Chiudi</string>
+</resources>
