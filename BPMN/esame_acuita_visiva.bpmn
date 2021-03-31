@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://bpmn.io/schema/bpmn" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.2.2" expressionLanguage="http://www.w3.org/1999/XPath" id="Definitions_108rvfs" name="" targetNamespace="http://bpmn.io/schema/bpmn" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
+  <bpmn:process id="Process_0ni0kpp" isClosed="false" isExecutable="false" processType="None">
+    <bpmn:extensionElements>
+      <yaoqiang:description/>
+      <yaoqiang:pageFormat height="841.8897637795276" imageableHeight="831.8897637795276" imageableWidth="588.1102362204724" imageableX="5.0" imageableY="5.0" orientation="0" width="598.1102362204724"/>
+      <yaoqiang:page background="#FFFFFF" horizontalCount="2" verticalCount="1"/>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_0y1kgc4" isInterrupting="true" name="Richiesta Esame acuità visiva (node-red)" parallelMultiple="false">
+      <bpmn:outgoing>Flow_14x5ecc</bpmn:outgoing>
+      <bpmn:outputSet/>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_16qi8i9">
+      <bpmn:incoming>Flow_1ad4j2k</bpmn:incoming>
+      <bpmn:incoming>Flow_0cimpmb</bpmn:incoming>
+      <bpmn:incoming>Flow_0e6x6k0</bpmn:incoming>
+      <bpmn:inputSet/>
+    </bpmn:endEvent>
+    <bpmn:task completionQuantity="1" id="Activity_1y9fqqc" isForCompensation="false" name="Presentazione attività esame vista (node-red)" startQuantity="1">
+      <bpmn:incoming>Flow_1wxof9v</bpmn:incoming>
+      <bpmn:outgoing>Flow_00hq7g5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task completionQuantity="1" id="Activity_1inahez" isForCompensation="false" name="Cast video di calibrazione distanza (node-red)" startQuantity="1">
+      <bpmn:incoming>Flow_00hq7g5</bpmn:incoming>
+      <bpmn:outgoing>Flow_17ed4gd</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task completionQuantity="1" id="Activity_022evdm" isForCompensation="false" name="Richiesta utilizzo app per misurazione distanza (node-red)" startQuantity="1">
+      <bpmn:incoming>Flow_17ed4gd</bpmn:incoming>
+      <bpmn:outgoing>Flow_0py3b9l</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_17ed4gd" sourceRef="Activity_1inahez" targetRef="Activity_022evdm"/>
+    <bpmn:exclusiveGateway gatewayDirection="Unspecified" id="Gateway_07fidwy" name="lettura risposta da app (node-red)">
+      <bpmn:incoming>Flow_1tts7p4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0au2sxp</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0cimpmb</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task completionQuantity="1" id="Activity_01soio0" isForCompensation="false" name="Avvio skill Alexa Presentazione (node-red)" startQuantity="1">
+      <bpmn:incoming>Flow_0l5jsr8</bpmn:incoming>
+      <bpmn:incoming>Flow_0ntdlsg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wxof9v</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_14x5ecc" sourceRef="StartEvent_0y1kgc4" targetRef="Gateway_0k0updh"/>
+    <bpmn:sequenceFlow id="Flow_1wxof9v" sourceRef="Activity_01soio0" targetRef="Activity_1y9fqqc"/>
+    <bpmn:task completionQuantity="1" id="Activity_16xeljm" isForCompensation="false" name="Avvio app e misurazione distanza" startQuantity="1">
+      <bpmn:incoming>Flow_0py3b9l</bpmn:incoming>
+      <bpmn:outgoing>Flow_1a23jcv</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task completionQuantity="1" id="Activity_0gxglrq" isForCompensation="false" name="Presentazione esame acuità visiva (node-red)" startQuantity="1">
+      <bpmn:incoming>Flow_0au2sxp</bpmn:incoming>
+      <bpmn:outgoing>Flow_18xcxzt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0au2sxp" name="SI" sourceRef="Gateway_07fidwy" targetRef="Activity_0gxglrq"/>
+    <bpmn:task completionQuantity="1" id="Activity_06z64v0" isForCompensation="false" name="Cast video lettera casuale da tavola optometrica (node-red)" startQuantity="1">
+      <bpmn:incoming>Flow_1ls424f</bpmn:incoming>
+      <bpmn:outgoing>Flow_1i3dcx8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task completionQuantity="1" id="Activity_0bgbba7" isForCompensation="false" name="Memorizzazione risposte (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_0idrkno</bpmn:incoming>
+      <bpmn:outgoing>Flow_1q7rjsz</bpmn:outgoing>
+      <bpmn:outgoing>Flow_12vlsmk</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1i3dcx8" sourceRef="Activity_06z64v0" targetRef="Activity_04bdo3f"/>
+    <bpmn:task completionQuantity="1" id="Activity_0gev5wt" isForCompensation="false" name="Elaborazione e comunicazione risultato esame" startQuantity="1">
+      <bpmn:incoming>Flow_0u68q2s</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ad4j2k</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1ad4j2k" sourceRef="Activity_0gev5wt" targetRef="Event_16qi8i9"/>
+    <bpmn:task completionQuantity="1" id="Activity_1j7dz1e" isForCompensation="false" name="Invio distanza recuperata da app a node-red (app)" startQuantity="1">
+      <bpmn:incoming>Flow_1a23jcv</bpmn:incoming>
+      <bpmn:outgoing>Flow_1tts7p4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1tts7p4" sourceRef="Activity_1j7dz1e" targetRef="Gateway_07fidwy"/>
+    <bpmn:sequenceFlow id="Flow_0py3b9l" sourceRef="Activity_022evdm" targetRef="Activity_16xeljm"/>
+    <bpmn:sequenceFlow id="Flow_1a23jcv" sourceRef="Activity_16xeljm" targetRef="Activity_1j7dz1e"/>
+    <bpmn:sequenceFlow id="Flow_0cimpmb" sourceRef="Gateway_07fidwy" targetRef="Event_16qi8i9"/>
+    <bpmn:sequenceFlow id="Flow_18xcxzt" sourceRef="Activity_0gxglrq" targetRef="Activity_052uq9w"/>
+    <bpmn:task completionQuantity="1" id="Activity_04bdo3f" isForCompensation="false" name="Richiesta lettura lettera (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_1i3dcx8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l2c1qs</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0l2c1qs" sourceRef="Activity_04bdo3f" targetRef="Activity_16gcsnb"/>
+    <bpmn:task completionQuantity="1" id="Activity_16gcsnb" isForCompensation="false" name="Recupero risposte lettura (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_0l2c1qs</bpmn:incoming>
+      <bpmn:outgoing>Flow_0idrkno</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0idrkno" sourceRef="Activity_16gcsnb" targetRef="Activity_0bgbba7"/>
+    <bpmn:task completionQuantity="1" id="Activity_0dy141h" isForCompensation="false" name="Invio risultato a node-red (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_1hscl8g</bpmn:incoming>
+      <bpmn:outgoing>Flow_0u68q2s</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0u68q2s" sourceRef="Activity_0dy141h" targetRef="Activity_0gev5wt"/>
+    <bpmn:task completionQuantity="1" id="Activity_052uq9w" isForCompensation="false" name="Avvio skill Alexa esame lettura tavola optometrica" startQuantity="1">
+      <bpmn:incoming>Flow_18xcxzt</bpmn:incoming>
+      <bpmn:incoming>Flow_0ukunue</bpmn:incoming>
+      <bpmn:outgoing>Flow_144cqk4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:dataStoreReference id="DataStoreReference_1yxvj0h"/>
+    <bpmn:task completionQuantity="1" id="Activity_1kxu0u5" isForCompensation="false" name="Richiesta visualizzazione lettera casuale (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_144cqk4</bpmn:incoming>
+      <bpmn:incoming>Flow_0i327in</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ls424f</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_144cqk4" sourceRef="Activity_052uq9w" targetRef="Activity_1kxu0u5"/>
+    <bpmn:sequenceFlow id="Flow_1ls424f" sourceRef="Activity_1kxu0u5" targetRef="Activity_06z64v0"/>
+    <bpmn:exclusiveGateway gatewayDirection="Unspecified" id="Gateway_0tkriem" name="Si è raggiunto il numero prestabilito di letture per l'esame?">
+      <bpmn:incoming>Flow_1q7rjsz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i327in</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1hscl8g</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1q7rjsz" sourceRef="Activity_0bgbba7" targetRef="Gateway_0tkriem"/>
+    <bpmn:sequenceFlow id="Flow_0i327in" name="NO" sourceRef="Gateway_0tkriem" targetRef="Activity_1kxu0u5"/>
+    <bpmn:sequenceFlow id="Flow_1hscl8g" name="SI" sourceRef="Gateway_0tkriem" targetRef="Activity_0dy141h"/>
+    <bpmn:exclusiveGateway gatewayDirection="Unspecified" id="Gateway_0k0updh" name="il dispositivo video è configurato? (node-red)">
+      <bpmn:incoming>Flow_14x5ecc</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ajckkh</bpmn:outgoing>
+      <bpmn:outgoing>Flow_11zdjj2</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1ajckkh" name="SI" sourceRef="Gateway_0k0updh" targetRef="Gateway_17175tv"/>
+    <bpmn:task completionQuantity="1" id="Activity_1i2tamy" isForCompensation="false" name="Avverte l'utente della mancata configurazione (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_11zdjj2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0e6x6k0</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_11zdjj2" name="NO" sourceRef="Gateway_0k0updh" targetRef="Activity_1i2tamy"/>
+    <bpmn:sequenceFlow id="Flow_0e6x6k0" sourceRef="Activity_1i2tamy" targetRef="Event_16qi8i9"/>
+    <bpmn:sequenceFlow id="Flow_00hq7g5" sourceRef="Activity_1y9fqqc" targetRef="Activity_1inahez"/>
+    <bpmn:exclusiveGateway gatewayDirection="Unspecified" id="Gateway_17175tv" name="esiste un esame non completato? (node-red)">
+      <bpmn:incoming>Flow_1ajckkh</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l5jsr8</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1ismeio</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0l5jsr8" name="NO" sourceRef="Gateway_17175tv" targetRef="Activity_01soio0"/>
+    <bpmn:task completionQuantity="1" id="Activity_1h46yte" isForCompensation="false" name="Avvio skill alexa per richiesta &quot;riprendi&quot; o &quot;nuovo&quot;" startQuantity="1">
+      <bpmn:incoming>Flow_1ismeio</bpmn:incoming>
+      <bpmn:outgoing>Flow_0j8nksl</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1ismeio" name="SI" sourceRef="Gateway_17175tv" targetRef="Activity_1h46yte"/>
+    <bpmn:exclusiveGateway gatewayDirection="Unspecified" id="Gateway_1eka9yd" name="Riprendere l'esame? (Alexa)">
+      <bpmn:incoming>Flow_0j8nksl</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ntdlsg</bpmn:outgoing>
+      <bpmn:outgoing>Flow_10bjv36</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0j8nksl" sourceRef="Activity_1h46yte" targetRef="Gateway_1eka9yd"/>
+    <bpmn:sequenceFlow id="Flow_0ntdlsg" name="NO" sourceRef="Gateway_1eka9yd" targetRef="Activity_01soio0"/>
+    <bpmn:task completionQuantity="1" id="Activity_0t619gk" isForCompensation="false" name="Invio messaggio tramite webapi per riprendere l'esame" startQuantity="1">
+      <bpmn:incoming>Flow_10bjv36</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ukunue</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_10bjv36" name="SI" sourceRef="Gateway_1eka9yd" targetRef="Activity_0t619gk"/>
+    <bpmn:sequenceFlow id="Flow_0ukunue" sourceRef="Activity_0t619gk" targetRef="Activity_052uq9w"/>
+    <bpmn:task completionQuantity="1" id="Activity_05suanc" isForCompensation="false" name="Invio risposte a node-red (Alexa)" startQuantity="1">
+      <bpmn:incoming>Flow_12vlsmk</bpmn:incoming>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_01sf8qd">
+        <bpmn:targetRef>DataStoreReference_1yxvj0h</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_12vlsmk" sourceRef="Activity_0bgbba7" targetRef="Activity_05suanc"/>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Yaoqiang_Diagram-Process_0ni0kpp" name="Untitled Diagram" resolution="96.0">
+    <bpmndi:BPMNPlane bpmnElement="Process_0ni0kpp">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_0y1kgc4" id="Yaoqiang-StartEvent_0y1kgc4">
+        <dc:Bounds height="32.0" width="32.0" x="182.0" y="251.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="203.0" x="99.0" y="304.06"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_16qi8i9" id="Yaoqiang-Event_16qi8i9">
+        <dc:Bounds height="32.0" width="32.0" x="722.0" y="402.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="735.0" y="442.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_07fidwy" id="Yaoqiang-Gateway_07fidwy" isMarkerVisible="true">
+        <dc:Bounds height="42.0" width="42.0" x="1625.0" y="244.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="169.0" x="1566.0" y="207.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_16xeljm" id="Yaoqiang-Activity_16xeljm">
+        <dc:Bounds height="80.0" width="100.0" x="1250.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="49.84" width="64.0" x="1268.0" y="246.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_0gxglrq" id="Yaoqiang-Activity_0gxglrq">
+        <dc:Bounds height="80.0" width="100.0" x="1750.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="49.84" width="89.0" x="1755.5" y="246.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_06z64v0" id="Yaoqiang-Activity_06z64v0">
+        <dc:Bounds height="80.0" width="100.0" x="1120.0" y="530.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="79.84" width="90.0" x="1125.0" y="532.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_0bgbba7" id="Yaoqiang-Activity_0bgbba7">
+        <dc:Bounds height="80.0" width="100.0" x="1610.0" y="530.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="34.84" width="84.0" x="1618.0" y="554.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_0gev5wt" id="Yaoqiang-Activity_0gev5wt">
+        <dc:Bounds height="80.0" width="100.0" x="690.0" y="760.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="49.84" width="79.0" x="700.5" y="777.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1j7dz1e" id="Yaoqiang-Activity_1j7dz1e">
+        <dc:Bounds height="80.0" width="100.0" x="1430.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="80.0" x="1440.0" y="238.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_04bdo3f" id="Yaoqiang-Activity_04bdo3f">
+        <dc:Bounds height="80.0" width="100.0" x="1290.0" y="530.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="34.84" width="83.0" x="1298.5" y="554.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_16gcsnb" id="Yaoqiang-Activity_16gcsnb">
+        <dc:Bounds height="80.0" width="100.0" x="1450.0" y="530.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="49.84" width="78.0" x="1461.0" y="547.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_0dy141h" id="Yaoqiang-Activity_0dy141h">
+        <dc:Bounds height="80.0" width="100.0" x="850.0" y="760.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="34.84" width="89.0" x="855.5" y="784.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_052uq9w" id="Yaoqiang-Activity_052uq9w">
+        <dc:Bounds height="80.0" width="100.0" x="800.0" y="530.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="85.0" x="807.5" y="539.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1kxu0u5" id="Yaoqiang-Activity_1kxu0u5">
+        <dc:Bounds height="80.0" width="100.0" x="960.0" y="530.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="80.0" x="970.0" y="539.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_0tkriem" id="Yaoqiang-Gateway_0tkriem" isMarkerVisible="true">
+        <dc:Bounds height="42.0" width="42.0" x="1775.0" y="545.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="281.0" x="1660.0" y="469.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_0k0updh" id="Yaoqiang-Gateway_0k0updh" isMarkerVisible="true">
+        <dc:Bounds height="42.0" width="42.0" x="285.0" y="244.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="221.0" x="199.0" y="181.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1i2tamy" id="Yaoqiang-Activity_1i2tamy">
+        <dc:Bounds height="80.0" width="100.0" x="390.0" y="380.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="82.0" x="399.0" y="389.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_17175tv" id="Yaoqiang-Gateway_17175tv" isMarkerVisible="true">
+        <dc:Bounds height="42.0" width="42.0" x="455.0" y="244.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="222.0" x="369.0" y="304.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_022evdm" id="Yaoqiang-Activity_022evdm">
+        <dc:Bounds height="80.0" width="100.0" x="1070.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="79.84" width="86.0" x="1077.0" y="231.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1inahez" id="Yaoqiang-Activity_1inahez">
+        <dc:Bounds height="80.0" width="100.0" x="910.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="68.0" x="926.0" y="238.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1y9fqqc" id="Yaoqiang-Activity_1y9fqqc">
+        <dc:Bounds height="80.0" width="100.0" x="750.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="49.84" width="84.0" x="758.0" y="246.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_01soio0" id="Yaoqiang-Activity_01soio0">
+        <dc:Bounds height="80.0" width="100.0" x="590.0" y="229.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="49.84" width="85.0" x="597.5" y="246.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1h46yte" id="Yaoqiang-Activity_1h46yte">
+        <dc:Bounds height="80.0" width="100.0" x="430.0" y="100.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="83.0" x="438.5" y="109.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_1eka9yd" id="Yaoqiang-Gateway_1eka9yd" isMarkerVisible="true">
+        <dc:Bounds height="42.0" width="42.0" x="615.0" y="115.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="143.0" x="569.5" y="85.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_0t619gk" id="Yaoqiang-Activity_0t619gk">
+        <dc:Bounds height="80.0" width="100.0" x="750.0" y="100.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="64.84" width="83.0" x="758.5" y="109.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="DataStoreReference_1yxvj0h" id="Yaoqiang-DataStoreReference_1yxvj0h">
+        <dc:Bounds height="30.0" width="35.0" x="1485.0" y="665.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1499.5" y="697.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_05suanc" id="Yaoqiang-Activity_05suanc">
+        <dc:Bounds height="80.0" width="100.0" x="1610.0" y="640.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="34.84" width="89.0" x="1615.5" y="664.58"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="Flow_12vlsmk" id="Yaoqiang-Flow_12vlsmk">
+        <di:waypoint x="1660.0" y="609.875"/>
+        <di:waypoint x="1660.0" y="639.875"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1657.0" y="614.96"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1tts7p4" id="Yaoqiang-Flow_1tts7p4">
+        <di:waypoint x="1530.0" y="269.0"/>
+        <di:waypoint x="1625.125" y="265.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1574.5" y="257.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0au2sxp" id="Yaoqiang-Flow_0au2sxp">
+        <di:waypoint x="1666.875" y="265.0"/>
+        <di:waypoint x="1750.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="15.0" x="1701.0" y="257.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0l2c1qs" id="Yaoqiang-Flow_0l2c1qs">
+        <di:waypoint x="1390.0" y="570.0"/>
+        <di:waypoint x="1450.0" y="570.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1417.0" y="560.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0e6x6k0" id="Yaoqiang-Flow_0e6x6k0">
+        <di:waypoint x="490.0" y="420.0"/>
+        <di:waypoint x="722.0004882887008" y="418.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="603.0" y="409.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0ntdlsg" id="Yaoqiang-Flow_0ntdlsg">
+        <di:waypoint x="636.0" y="156.875"/>
+        <di:waypoint x="636.0" y="228.875"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="21.0" x="625.5" y="182.96"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0i327in" id="Yaoqiang-Flow_0i327in">
+        <di:waypoint x="1800.0" y="582.875"/>
+        <di:waypoint x="1800.0" y="760.0"/>
+        <di:waypoint x="1010.0" y="760.0"/>
+        <di:waypoint x="1010.0" y="609.875"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="21.0" x="1408.0" y="750.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1q7rjsz" id="Yaoqiang-Flow_1q7rjsz">
+        <di:waypoint x="1710.0" y="570.0"/>
+        <di:waypoint x="1775.125" y="566.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1739.5" y="558.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1hscl8g" id="Yaoqiang-Flow_1hscl8g">
+        <di:waypoint x="1812.875" y="570.0"/>
+        <di:waypoint x="1860.0" y="570.0"/>
+        <di:waypoint x="1860.0" y="800.0"/>
+        <di:waypoint x="950.0" y="800.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="15.0" x="1536.06" y="790.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0u68q2s" id="Yaoqiang-Flow_0u68q2s">
+        <di:waypoint x="850.0" y="800.0"/>
+        <di:waypoint x="790.0" y="800.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="817.0" y="790.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1i3dcx8" id="Yaoqiang-Flow_1i3dcx8">
+        <di:waypoint x="1220.0" y="570.0"/>
+        <di:waypoint x="1290.0" y="570.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1252.0" y="560.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_17ed4gd" id="Yaoqiang-Flow_17ed4gd">
+        <di:waypoint x="1010.0" y="269.0"/>
+        <di:waypoint x="1070.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1037.0" y="259.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0idrkno" id="Yaoqiang-Flow_0idrkno">
+        <di:waypoint x="1550.0" y="570.0"/>
+        <di:waypoint x="1610.0" y="570.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1577.0" y="560.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0ukunue" id="Yaoqiang-Flow_0ukunue">
+        <di:waypoint x="850.0" y="140.0"/>
+        <di:waypoint x="870.0" y="140.0"/>
+        <di:waypoint x="870.0" y="355.0"/>
+        <di:waypoint x="820.0" y="355.0"/>
+        <di:waypoint x="870.0" y="529.875"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="867.0" y="315.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_00hq7g5" id="Yaoqiang-Flow_00hq7g5">
+        <di:waypoint x="850.0" y="269.0"/>
+        <di:waypoint x="910.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="877.0" y="259.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1ajckkh" id="Yaoqiang-Flow_1ajckkh">
+        <di:waypoint x="326.875" y="265.0"/>
+        <di:waypoint x="455.125" y="265.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="15.0" x="383.5" y="255.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1ad4j2k" id="Yaoqiang-Flow_1ad4j2k">
+        <di:waypoint x="738.0" y="759.875"/>
+        <di:waypoint x="738.0" y="433.875"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="735.0" y="586.96"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1ismeio" id="Yaoqiang-Flow_1ismeio">
+        <di:waypoint x="476.0" y="243.875"/>
+        <di:waypoint x="476.0" y="179.875"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="15.0" x="468.5" y="201.96"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0j8nksl" id="Yaoqiang-Flow_0j8nksl">
+        <di:waypoint x="530.0" y="140.0"/>
+        <di:waypoint x="615.125" y="136.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="569.5" y="128.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1wxof9v" id="Yaoqiang-Flow_1wxof9v">
+        <di:waypoint x="690.0" y="269.0"/>
+        <di:waypoint x="750.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="717.0" y="259.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1a23jcv" id="Yaoqiang-Flow_1a23jcv">
+        <di:waypoint x="1350.0" y="269.0"/>
+        <di:waypoint x="1430.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1387.0" y="259.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0cimpmb" id="Yaoqiang-Flow_0cimpmb">
+        <di:waypoint x="1650.0" y="281.875"/>
+        <di:waypoint x="1650.0" y="420.0"/>
+        <di:waypoint x="753.858258889298" y="420.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1267.99" y="410.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0py3b9l" id="Yaoqiang-Flow_0py3b9l">
+        <di:waypoint x="1170.0" y="269.0"/>
+        <di:waypoint x="1250.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1207.0" y="259.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_11zdjj2" id="Yaoqiang-Flow_11zdjj2">
+        <di:waypoint x="310.0" y="281.875"/>
+        <di:waypoint x="310.0" y="420.0"/>
+        <di:waypoint x="390.0" y="420.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="21.0" x="299.5" y="381.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_10bjv36" id="Yaoqiang-Flow_10bjv36">
+        <di:waypoint x="656.875" y="136.0"/>
+        <di:waypoint x="750.0" y="140.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="15.0" x="696.0" y="128.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0l5jsr8" id="Yaoqiang-Flow_0l5jsr8">
+        <di:waypoint x="496.875" y="265.0"/>
+        <di:waypoint x="590.0" y="269.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="21.0" x="533.0" y="257.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_144cqk4" id="Yaoqiang-Flow_144cqk4">
+        <di:waypoint x="900.0" y="570.0"/>
+        <di:waypoint x="960.0" y="570.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="927.0" y="560.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_14x5ecc" id="Yaoqiang-Flow_14x5ecc">
+        <di:waypoint x="213.9995117112992" y="267.0"/>
+        <di:waypoint x="285.125" y="265.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="246.5" y="256.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="DataOutputAssociation_01sf8qd" id="Yaoqiang-DataOutputAssociation_01sf8qd">
+        <di:waypoint x="1610.0" y="680.0"/>
+        <di:waypoint x="1520.0" y="680.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1562.0" y="670.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_18xcxzt" id="Yaoqiang-Flow_18xcxzt">
+        <di:waypoint x="1850.0" y="269.0"/>
+        <di:waypoint x="1870.0" y="269.0"/>
+        <di:waypoint x="1870.0" y="460.0"/>
+        <di:waypoint x="850.0" y="460.0"/>
+        <di:waypoint x="900.0" y="570.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1542.5" y="560.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1ls424f" id="Yaoqiang-Flow_1ls424f">
+        <di:waypoint x="1060.0" y="570.0"/>
+        <di:waypoint x="1120.0" y="570.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="19.84" width="6.0" x="1087.0" y="560.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
