@@ -1,0 +1,1 @@
+If gradle do not works fine.. download openCVLibrary343 build files
