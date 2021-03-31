@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:232435367776:function:60d9b00f-0719-4f76-9f4d-3fe523c30214:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:232435367776:function:60d9b00f-0719-4f76-9f4d-3fe523c30214:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:232435367776:function:60d9b00f-0719-4f76-9f4d-3fe523c30214:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:232435367776:function:60d9b00f-0719-4f76-9f4d-3fe523c30214:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "it-IT": {}
+      }
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "it-IT": {
+          "description": "Sample Full Description",
+          "examplePhrases": [
+            "Alexa apri ciao mondo",
+            "ciao",
+            "aiuto"
+          ],
+          "keywords": [],
+          "name": "Esame della vista",
+          "summary": "Sample Short Description"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}

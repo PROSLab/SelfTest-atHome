@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:232435367776:function:394a2f2c-9f7a-4bdd-8ada-1d9affaca6cf:Release_0"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:232435367776:function:394a2f2c-9f7a-4bdd-8ada-1d9affaca6cf:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:232435367776:function:394a2f2c-9f7a-4bdd-8ada-1d9affaca6cf:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:232435367776:function:394a2f2c-9f7a-4bdd-8ada-1d9affaca6cf:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "it-IT": {}
+      }
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "it-IT": {
+          "description": "Audio Exam",
+          "examplePhrases": [
+            "Alexa apri esame uditivo",
+            "ciao",
+            "aiuto"
+          ],
+          "keywords": [],
+          "name": "Esame dell\u0027udito",
+          "summary": "Audio Exam"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}

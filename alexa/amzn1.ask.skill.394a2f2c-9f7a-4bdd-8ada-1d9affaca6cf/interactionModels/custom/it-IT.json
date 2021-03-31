@@ -1,0 +1,109 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "invocation audio",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "PresentationIntent",
+          "slots": [
+            {
+              "name": "confermaripeti",
+              "type": "confermaripeti"
+            }
+          ],
+          "samples": [
+            "{confermaripeti}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AudioExamIntent",
+          "slots": [
+            {
+              "name": "avvio",
+              "type": "avvio"
+            }
+          ],
+          "samples": [
+            "{avvio}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "no"
+              }
+            },
+            {
+              "name": {
+                "value": "si"
+              }
+            },
+            {
+              "name": {
+                "value": "conferma"
+              }
+            },
+            {
+              "name": {
+                "value": "ripeti"
+              }
+            }
+          ],
+          "name": "confermaripeti"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "incomincia esame"
+              }
+            },
+            {
+              "name": {
+                "value": "inizia esame"
+              }
+            },
+            {
+              "name": {
+                "value": "avvia esame"
+              }
+            }
+          ],
+          "name": "avvio"
+        }
+      ]
+    }
+  },
+  "version": "23"
+}

@@ -1,0 +1,278 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "beta vista",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "GetStringIntent",
+          "slots": [
+            {
+              "name": "stringa",
+              "type": "string"
+            }
+          ],
+          "samples": [
+            "{stringa}",
+            "lettera {stringa}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "y.",
+                "synonyms": [
+                  "Y",
+                  "y"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "x.",
+                "synonyms": [
+                  "X",
+                  "x"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "z.",
+                "synonyms": [
+                  "Z",
+                  "z"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "w.",
+                "synonyms": [
+                  "W",
+                  "w"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "v.",
+                "synonyms": [
+                  "V",
+                  "v"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "u.",
+                "synonyms": [
+                  "U",
+                  "u"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "t.",
+                "synonyms": [
+                  "T",
+                  "t"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "s.",
+                "synonyms": [
+                  "S",
+                  "s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "r.",
+                "synonyms": [
+                  "R",
+                  "r"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "q.",
+                "synonyms": [
+                  "Q",
+                  "q"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "p.",
+                "synonyms": [
+                  "P",
+                  "p"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "o.",
+                "synonyms": [
+                  "O",
+                  "o"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "n.",
+                "synonyms": [
+                  "N",
+                  "n"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "m.",
+                "synonyms": [
+                  "M",
+                  "m"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "l.",
+                "synonyms": [
+                  "L",
+                  "l"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "j.",
+                "synonyms": [
+                  "J",
+                  "j"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "i.",
+                "synonyms": [
+                  "I",
+                  "i"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "h.",
+                "synonyms": [
+                  "H",
+                  "h"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "g.",
+                "synonyms": [
+                  "G",
+                  "g"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "f.",
+                "synonyms": [
+                  "F",
+                  "f"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "e.",
+                "synonyms": [
+                  "elefante",
+                  "é",
+                  "è",
+                  "E\u0027",
+                  "E",
+                  "e"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "d.",
+                "synonyms": [
+                  "D",
+                  "d"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "c.",
+                "synonyms": [
+                  "k.",
+                  "k",
+                  "ci",
+                  "C",
+                  "c"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "b.",
+                "synonyms": [
+                  "B",
+                  "b"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "a.",
+                "synonyms": [
+                  "A",
+                  "a"
+                ]
+              }
+            }
+          ],
+          "name": "string"
+        }
+      ]
+    }
+  },
+  "version": "16"
+}

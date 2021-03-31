@@ -1,0 +1,97 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "richiesta sino",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [
+            {
+              "name": "response",
+              "type": "string"
+            }
+          ],
+          "samples": [
+            "{response}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "nuovo",
+                "synonyms": [
+                  "ricomincia"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "riprendi",
+                "synonyms": [
+                  "continua"
+                ]
+              }
+            }
+          ],
+          "name": "string"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "HelloWorldIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "response",
+              "type": "string",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.447963397386.208061993953.485059833616"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.447963397386.208061993953.485059833616",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "non ho capito"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "7"
+}
