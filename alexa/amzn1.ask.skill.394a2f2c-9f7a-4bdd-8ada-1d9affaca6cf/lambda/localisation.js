@@ -1,7 +1,7 @@
 module.exports = {
     it: {
         translation: {
-            WELCOME_MSG:     `Per effettuare l'esame dell'udito <phoneme alphabet="ipa" ph="posit͡zionati">posizionati</phoneme> in un ambiente tranquillo.E' consigliato utilizzare le cuffie, se possibile. Ascolterai dei suoni. Dovrai dire, si, se riesci a sentire il suono o, no, se non riesci a sentirlo. Di conferma per iniziare o ripeti per riascoltare la descrizione`,
+            WELCOME_MSG:     `Per effettuare l'esame dell'udito <phoneme alphabet="ipa" ph="posit͡zionati">posizionati</phoneme> in un ambiente tranquillo. è consigliato utilizzare le cuffie, se possibile. Ascolterai dei suoni. Dovrai dire, si, se riesci a sentire il suono o, no, se non riesci a sentirlo. Di conferma per iniziare o ripeti per riascoltare la descrizione`,
             CALIBRATION_MSG: 'Ora ascolta questo suono e regola il volume in modo che sia confortevole. <audio src="https://www.overside.it/unicam/audioexam/hearingTest.calibrated.mp3" /> Di avvia esame, oppure ripeti.',
             AUDIO250_0_MSG:  'Secondo livello, <audio src="https://www.overside.it/unicam/audioexam/hearingTest.warble_500_0.mp3" /> Hai sentito il suono?',
             AUDIO250_m5_MSG: 'Iniziamo, ascolta ed al termine ti chiederò se hai sentito il suono oppure no, <audio src="https://www.overside.it/unicam/audioexam/hearingTest.warble_500_-5.mp3" /> Hai sentito il suono?',

@@ -70,7 +70,7 @@ const PresentationIntentHandler = {
             console.log('YESORNOT: ' + responseValue);
             console.log(sessionAttributes['step']);
             let speakOutput = "";
-            if(responseValue === 'no' && sessionAttributes['step'] <= 11){
+            if(responseValue === 'no' && sessionAttributes['step'] <= 11 || responseValue === 'avvia'){
                 switch(sessionAttributes['step']){
                     case 2:
                         speakOutput = handlerInput.t('AUDIO250_0_MSG');

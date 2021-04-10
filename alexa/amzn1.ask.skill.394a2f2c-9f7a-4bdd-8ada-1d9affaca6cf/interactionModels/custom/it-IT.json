@@ -86,17 +86,26 @@
           "values": [
             {
               "name": {
-                "value": "incomincia esame"
+                "value": "incomincia esame",
+                "synonyms": [
+                  "incomincia"
+                ]
               }
             },
             {
               "name": {
-                "value": "inizia esame"
+                "value": "inizia esame",
+                "synonyms": [
+                  "inizia"
+                ]
               }
             },
             {
               "name": {
-                "value": "avvia esame"
+                "value": "avvia esame",
+                "synonyms": [
+                  "avvia"
+                ]
               }
             }
           ],
@@ -105,5 +114,5 @@
       ]
     }
   },
-  "version": "23"
+  "version": "24"
 }
