@@ -1,4 +1,4 @@
-# TesiTriennale-Flavio.Fabbrizi
+# IoT System for Audiovisual Self-Administered Tests
 
 Il sistema è composto da una soluzione node-RED, da una soluzione Alexa e da un'applicazione per dispositivi mobili Android chiamata (distFinder).
 
